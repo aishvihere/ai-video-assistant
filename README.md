@@ -29,6 +29,7 @@ YouTube URL / file
             Title + summary          Structured extraction     Vector index (RAG)
                                 (actions, decisions, questions)        │
                                                                        ▼
+                                                                  Chat Q&A
 ```
 
 - **Structured extraction** uses LangChain with Pydantic schemas, so results come back as typed objects instead of free text. Long transcripts are split into chunks, extracted in parallel, and merged to remove duplicates. Questions are extracted from the full transcript in one pass so a question can be matched with its answer later in the video.
