@@ -1,0 +1,57 @@
+# ============================================================
+# AI Video/Audio Meeting Assistant
+# Python 3.10+ recommended
+# System dependency: ffmpeg must be installed separately
+#   Windows: winget install ffmpeg   |  macOS: brew install ffmpeg
+#   Ubuntu:  sudo apt install ffmpeg
+# ============================================================
+
+# --- UI ---
+streamlit>=1.40.0
+PyTorch
+# GPU / speech
+torch==2.6.0+cu124
+torchaudio==2.6.0+cu124
+nvidia-cublas-cu12
+nvidia-cudnn-cu12==9.*
+
+# audio + API calls
+requests
+
+# --- LLM orchestration (LangChain + LCEL) ---
+langchain>=0.3.0
+langchain-core>=0.3.0
+langchain-openai>=0.2.0
+langchain-community>=0.3.0
+langchain-text-splitters>=0.3.0
+
+# --- Vector store / RAG (Chroma + OpenAI embeddings) ---
+langchain-chroma>=0.1.4
+chromadb>=0.5.0
+streamlit
+# --- OpenAI (Whisper API, chat models, embeddings) ---
+openai>=1.50.0
+tiktoken>=0.7.0
+
+# --- YouTube download (audio extraction) ---
+yt-dlp>=2024.10.0
+
+# --- Audio/video handling (splitting files to fit Whisper's 25 MB limit) ---
+pydub>=0.25.1
+ffmpeg-python>=0.2.0
+
+# --- Structured outputs (summary, action items, decisions) ---
+pydantic>=2.7.0
+
+# --- Export results (PDF / TXT) ---
+fpdf2>=2.8.0
+
+# --- Config / API keys (.env file) ---
+python-dotenv>=1.0.0
+
+# ------------------------------------------------------------
+# OPTIONAL: run Whisper locally instead of the OpenAI API
+# (free, but needs more RAM/GPU; also pulls in PyTorch)
+# ------------------------------------------------------------
+# openai-whisper>=20240930
+faster-whisper>=1.0.3
