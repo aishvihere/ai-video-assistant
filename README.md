@@ -18,7 +18,7 @@ Supports English and Hinglish.
 
 ## How it works
 
-
+```
 YouTube URL / file
       │
       ▼
@@ -29,14 +29,14 @@ YouTube URL / file
             Title + summary          Structured extraction     Vector index (RAG)
                                 (actions, decisions, questions)        │
                                                                        ▼
-
+```
 
 - **Structured extraction** uses LangChain with Pydantic schemas, so results come back as typed objects instead of free text. Long transcripts are split into chunks, extracted in parallel, and merged to remove duplicates. Questions are extracted from the full transcript in one pass so a question can be matched with its answer later in the video.
 - **Chat** retrieves the most relevant transcript chunks for each question and passes them to the model, which is instructed to answer only from that context.
 
 ## Project structure
 
-
+```
 .
 ├── app.py                  # Streamlit web UI
 ├── main.py                 # Command-line version
@@ -51,7 +51,7 @@ YouTube URL / file
 │   └── config.toml         # Theme and upload limit
 ├── requirements.txt
 └── .env                    # API keys (not committed)
-
+```
 
 ## Setup
 
@@ -64,7 +64,9 @@ YouTube URL / file
 
 ### Install
 
+
 bash
+```
 git clone <your-repo-url>
 cd <your-repo-folder>
 
@@ -75,7 +77,7 @@ venv\Scripts\activate
 source venv/bin/activate
 
 pip install -r requirements.txt
-
+```
 
 #### GPU setup (PyTorch + CUDA)
 
