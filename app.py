@@ -15,7 +15,7 @@ load_dotenv()
 
 st.set_page_config(page_title="AI Video Assistant", page_icon="🎬", layout="wide")
 
-# ---------------- styling ----------------
+# styling 
 CSS = """
 <style>
 #MainMenu, footer {visibility: hidden;}
@@ -97,7 +97,7 @@ CSS = """
 st.markdown(CSS, unsafe_allow_html=True)
 
 
-# ---------------- helpers ----------------
+# helpers
 def esc(x) -> str:
     return html.escape(str(x))
 
@@ -208,14 +208,14 @@ def show_questions(items):
         )
 
 
-# ---------------- state ----------------
+#  state 
 if "result" not in st.session_state:
     st.session_state.result = None
 if "messages" not in st.session_state:
     st.session_state.messages = []
 
 
-# ---------------- sidebar ----------------
+#  sidebar 
 with st.sidebar:
     st.markdown("## 🎬 AI Video Assistant")
     st.caption("Summaries, action items, decisions, and chat for any video or meeting.")
@@ -249,7 +249,7 @@ with st.sidebar:
         st.rerun()
 
 
-# ---------------- main area ----------------
+#  main area 
 result = st.session_state.result
 
 if result is None:
